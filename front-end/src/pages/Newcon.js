@@ -13,6 +13,7 @@ class New extends Component {
         valorlitro: '',
         perc: '',
         consmedio: '',
+        //kmpercorrdido: '',
         data: {},
         errors: {},
     }
@@ -26,6 +27,7 @@ class New extends Component {
         data.append('dataptroca', this.state.dataptroca);
         data.append('kmatual', this.state.kmatual);
         data.append('valorlitro', this.state.valorlitro);
+       // data.append('kmpercorrdido', this.state.kmpercorrdido);
         await api.post('posts', data)
 
         this.props.history.push('/');
@@ -42,7 +44,7 @@ class New extends Component {
         kmpercorrido = kmatual - kmabas
         consumomedio = kmpercorrido / qtdlitro
 
-        this.setState({ consumomedio })
+        this.setState({ consumomedio, kmpercorrido })
         this.calculaDias()
     }
 
@@ -120,6 +122,7 @@ class New extends Component {
                                    
 
                     <label>Consumo médio:  {this.state.consumomedio} KM/L</label><br></br>
+                    <label>Percorreu:  {this.state.kmpercorrido} Km com {this.state.qtdlitro} Litros </label><br></br>
                     <br></br>
                     <button onClick={this.calcular1.bind(this)} >Calcular</button>
                     <br></br>
