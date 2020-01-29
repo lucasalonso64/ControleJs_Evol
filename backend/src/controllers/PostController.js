@@ -2,25 +2,38 @@ const Post = require('../models/Post');
 const sharp = require('sharp');
 const path = require('path');
 const fs = require('fs');
+const Sequelize = require('sequelize')
 
 
 module.exports = {
-    async index(req, res){
-        const posts = await Post.find().sort('-createdAt');
+    // MODELO
+    // async index(req, res){
+    //     //const posts = await Post.find().sort('-createdAt');
+    //     const posts = await Post.all();
 
+    //     return res.json(posts);
+
+    // },
+
+        async index(req, res){     
+        const posts = await Post.findAll();
         return res.json(posts);
-
     },
+
+    async show(req, res) {
+        const posts = await Post.all();
+        return res.json(posts);
+    },
+
     async store(req, res){
-
-       const { kmtroca,kmptroca,kmatual, dataptroca} = req.body;
-
+       const { kmatual, kmabas, consumomedio, kmpercorrido, qtdlitro } = req.body;
 
        const post = await Post.create({
-        kmtroca,
-        kmptroca,
-        kmatual,
-        dataptroca,
+        kmatual: req.body.kmatual,   
+        kmabas: req.body.kmabas,
+        consumomedio: req.body.consumomedio,
+        kmpercorrido: req.body.kmpercorrido,
+        qtdlitro: req.body.qtdlitro,
        })
 
 

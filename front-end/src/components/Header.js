@@ -10,7 +10,7 @@ export default function Header() {
         <header id="main-header">
             <div className="header-content">
                 <Link to="/">
-                <button type="submit">Consulta</button>
+                <button type="submit">Consulta Consumo</button>
            
                 </Link>
                 <Link to="/newcon">                

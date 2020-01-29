@@ -6,5 +6,6 @@ const multer1 = multer();
 
 routes.get('/posts', PostController.index);
 routes.post('/posts', multer1.single(), PostController.store);
+routes.get('*/consulta*',PostController.show);
 
 module.exports = routes;

@@ -31,16 +31,18 @@ class Feed extends Component {
 
     }
     render() {
+      
         return (
             <section id="post-list">
                 {this.state.feed.map(post => (
                     <article key={post._id}>
                         <header>
                             <div className="user-info">
-                            <span className="place"> DATA DA TROCA: {post.createdAt}</span>
-                                <span className="place">TROCADO COM: {post.kmtroca} km</span>
-                                <span className="place">PRÓXIMA TROCA: {post.kmptroca} km</span>
-                                <span className="place"> DATA PROXIMA TROCA: {post.dataptroca}</span>                           
+                            <span className="place"> DATA DO ABASTECIMENTO: {post.createdAt}</span>
+                                <span className="place">KM ABASTECIMENTO: {post.kmabas} KM</span>
+                                <span className="place">QUANTIDADE DE LITRO: {post.qtdlitro} L</span>
+                                <span className="place"> CONSUMO MÉDIO: {post.consumomedio} km/L</span>                           
+                                <span className="place"> KM PERCORRIDO: {post.kmpercorrido} KM</span>   
                              
                         
                             </div>                           

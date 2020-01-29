@@ -22,12 +22,12 @@ class New extends Component {
         e.preventDefault();
 
         const data = new FormData();
+        data.append('kmabas', this.state.kmabas);
+        data.append('qtdlitro', this.state.qtdlitro);
         data.append('kmatual', this.state.kmatual);
-        data.append('kmptroca', this.state.kmptroca);
-        data.append('dataptroca', this.state.dataptroca);
-        data.append('kmatual', this.state.kmatual);
-        data.append('valorlitro', this.state.valorlitro);
-       // data.append('kmpercorrdido', this.state.kmpercorrdido);
+        data.append('consumomedio', this.state.consumomedio);       
+        data.append('kmpercorrido', this.state.kmpercorrido);
+
         await api.post('posts', data)
 
         this.props.history.push('/');

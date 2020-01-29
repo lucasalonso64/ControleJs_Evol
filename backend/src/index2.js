@@ -2,10 +2,18 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const cors = require('cors');
+
 const app = express();
+
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
-const Post = require('./models/Post');
+
+
+
+mongoose.connect('mongodb://localhost:27017/controletrocaoleo',{
+    useNewUrlParser: true,
+
+})
 
 app.use((req, res, next) => {
     req.io = io;
@@ -13,12 +21,6 @@ app.use((req, res, next) => {
     next();
 })
 
-/*Implementação*/
-//definindo as rotas
-const router = express.Router();
-//router.get('/', (req, res) => res.json({ message: 'Funcionando!' }));
-router.get('/', (req, res) => res.json({ message: 'Funcionando!' }));
-app.use('/', router);
 
 
 app.use(cors()); // Permite que qualquer aplicação acesse o backend
