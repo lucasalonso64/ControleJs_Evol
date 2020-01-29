@@ -35,10 +35,10 @@ const Post = db.sequelize.define('CalcConsumo',{
     },
     
 
-    id: {
-        type: db.Sequelize.STRING,
-        primaryKey: true
-    },
+    // id: {
+    //     type: db.Sequelize.STRING,
+    //     primaryKey: false
+    // },
 
     
 })

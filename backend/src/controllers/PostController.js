@@ -29,11 +29,11 @@ module.exports = {
        const { kmatual, kmabas, consumomedio, kmpercorrido, qtdlitro } = req.body;
 
        const post = await Post.create({
-        kmatual: req.body.kmatual,   
-        kmabas: req.body.kmabas,
+        kmatual:      req.body.kmatual,   
+        kmabas:       req.body.kmabas,
         consumomedio: req.body.consumomedio,
         kmpercorrido: req.body.kmpercorrido,
-        qtdlitro: req.body.qtdlitro,
+        qtdlitro:     req.body.qtdlitro,
        })
 
 
