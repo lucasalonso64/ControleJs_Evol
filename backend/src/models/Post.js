@@ -1,17 +1,4 @@
-// const mongoose = require('mongoose');
-
-// const PostSchema = new mongoose.Schema({
-//     kmtroca: Number,
-//     kmptroca: Number,
-//     kmatual: Number,
-//     dataptroca: String,
-// }, {
-//     timestamps: true,
-// });
-// module.exports = mongoose.model('Post', PostSchema);
-
 const db = require('./db')
-
 
 const Post = db.sequelize.define('CalcConsumo',{
     timestamps: false,
@@ -34,14 +21,5 @@ const Post = db.sequelize.define('CalcConsumo',{
         type: db.Sequelize.STRING
     },
     
-
-    // id: {
-    //     type: db.Sequelize.STRING,
-    //     primaryKey: false
-    // },
-
-    
 })
-
-//Post.sync({force: true}) //use este comando somente quandor for 
 module.exports = Post

@@ -1,1 +1,8 @@
 yarn add sequelize-auto mssql tedious
+
+
+Informações para configuração do Maps:
+
+https://github.com/imranhsayed/google-maps-in-react
+
+Chave: AIzaSyDLCvR2CzEY0PWRyAy-YGFTJyrtmUF-BFA
